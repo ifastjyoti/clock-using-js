@@ -1,17 +1,20 @@
-function updateClock() {
+function updateClocks() {
+    const istClock = document.getElementById('ist-clock');
+    const jstClock = document.getElementById('jst-clock');
+
     const now = new Date();
-    const seconds = now.getSeconds();
-    const minutes = now.getMinutes();
-    const hours = now.getHours();
 
-    const secondDeg = ((seconds / 60) * 360) + 90; // 90 for rotation offset
-    const minuteDeg = ((minutes / 60) * 360) + (seconds / 60) * 6 + 90; // Adding seconds to minutes
-    const hourDeg = ((hours % 12) / 12) * 360 + (minutes / 60) * 30 + 90; // Adding minutes to hours
+    // IST is UTC +5:30
+    const istOffset = 5.5 * 60 * 60 * 1000; // in milliseconds
+    const jstOffset = 9 * 60 * 60 * 1000; // in milliseconds
 
-    document.getElementById('second').style.transform = `rotate(${secondDeg}deg)`;
-    document.getElementById('minute').style.transform = `rotate(${minuteDeg}deg)`;
-    document.getElementById('hour').style.transform = `rotate(${hourDeg}deg)`;
+    const istDate = new Date(now.getTime() + istOffset);
+    const jstDate = new Date(now.getTime() + jstOffset);
+
+    istClock.textContent = istDate.toLocaleTimeString('en-IN', { hour12: false });
+    jstClock.textContent = jstDate.toLocaleTimeString('en-JP', { hour12: false });
 }
 
-setInterval(updateClock, 1000);
-updateClock(); // Call once to set the initial position
+// Update the clocks every second
+setInterval(updateClocks, 1000);
+updateClocks(); // Initial call to set the clock immediately

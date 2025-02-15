@@ -1,53 +1,27 @@
 body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #282c34;
+}
+
+.clock-container {
+    display: flex;
+    gap: 50px;
 }
 
 .clock {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    border: 10px solid white;
-    border-radius: 50%;
-    background-color: gray;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.hand {
-    position: absolute;
-    background-color: white;
-    transform-origin: bottom;
-    bottom: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.hour {
-    width: 6px;
-    height: 50px;
-}
-
-.minute {
-    width: 4px;
-    height: 70px;
-}
-
-.second {
-    width: 2px;
-    height: 90px;
-    background-color: red;
-}
-
-.center {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.clock-display {
+    font-size: 2em;
+    margin-top: 10px;
 }
