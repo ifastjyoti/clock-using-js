@@ -3,18 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Clocks</title>
+    <title>World Analog Clocks</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="clock-container">
         <div class="clock">
             <h2>Indian Standard Time (IST)</h2>
-            <div id="ist-clock" class="clock-display"></div>
+            <div id="ist-clock" class="clock-display">
+                <div class="analog-clock">
+                    <div class="hand hour-hand" id="ist-hour-hand"></div>
+                    <div class="hand minute-hand" id="ist-minute-hand"></div>
+                    <div class="hand second-hand" id="ist-second-hand"></div>
+                </div>
+            </div>
         </div>
         <div class="clock">
             <h2>Japan Standard Time (JST)</h2>
-            <div id="jst-clock" class="clock-display"></div>
+            <div id="jst-clock" class="clock-display">
+                <div class="analog-clock">
+                    <div class="hand hour-hand" id="jst-hour-hand"></div>
+                    <div class="hand minute-hand" id="jst-minute-hand"></div>
+                    <div class="hand second-hand" id="jst-second-hand"></div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>

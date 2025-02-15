@@ -14,14 +14,46 @@ body {
 }
 
 .clock {
-    background: gray;
+    background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-.clock-display {
-    font-size: 2em;
-    margin-top: 10px;
+.analog-clock {
+    width: 150px;
+    height: 150px;
+    border: 5px solid #333;
+    border-radius: 50%;
+    position: relative;
+    margin: 20px auto;
+}
+
+.hand {
+    position: absolute;
+    background: #333;
+    border-radius: 5px;
+    transform-origin: bottom;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hour-hand {
+    width: 6px;
+    height: 40px;
+    background: #333;
+}
+
+.minute-hand {
+    width: 4px;
+    height: 60px;
+    background: #666;
+}
+
+.second-hand {
+    width: 2px;
+    height: 70px;
+    background: red;
 }
